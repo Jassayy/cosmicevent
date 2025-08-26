@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌌 Cosmic Event Tracker
 
-## Getting Started
 
-First, run the development server:
+A **Next.js 14** application that lets you explore and visualize upcoming **cosmic events** using interactive charts and real-time data storage. Built with **Supabase (Auth + DB), Prisma ORM, TailwindCSS, and Recharts**.
 
+
+---
+
+
+## 🚀 Features
+- 🔐 **Authentication** with Supabase (email/password, OAuth providers not provided yet)
+- 🌠 **Cosmic Event Tracking** — Add, view, and explore astronomical events
+- 📊 **Interactive Charts** with Recharts for visualizing trends
+- 🎨 **Beautiful UI** styled with TailwindCSS
+- ⚡ **Database** powered by NeonDB + Prisma ORM
+- 🖥️ **Next.js App Router** (Server Components, API routes, SSR/ISR)
+
+
+---
+
+
+## 🛠️ Tech Stack
+- **Frontend**: [Next.js 14](https://nextjs.org/)
+- **Database**: [Supabase PostgreSQL](https://supabase.com/)
+- **ORM**: [Prisma](https://www.prisma.io/)
+- **Styling**: [TailwindCSS](https://tailwindcss.com/)
+- **Charts**: [Recharts](https://recharts.org/)
+- **Hosting**: [Vercel](https://vercel.com/)
+
+
+---
+
+
+## ⚙️ Installation
+
+
+### 1. Clone the Repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/Jassayy/cosmicevent.git
+cd cosmicevent
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 2. Install Dependencies
+```bash
+npm install # or yarn install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+### 3. Setup Environment Variables
+Create a `.env` file in the root directory:
+```env
+# Supabase
+NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Prisma (NeonDb or Supabase DB URL)
+DATABASE_URL=postgresql://postgres:[password]@db.[project-ref].supabase.co:5432/postgres
+```
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 4. Setup Prisma
+```bash
+npx prisma generate
+npx prisma migrate dev --name init
+Visit [http://localhost:3000](http://localhost:3000).

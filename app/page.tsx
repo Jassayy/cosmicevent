@@ -1,6 +1,7 @@
 import { EventList } from "@/components/EventList";
 import FilterBar from "@/components/FilterBar";
 import Link from "next/link";
+import { Suspense } from "react";
 
 export default function Home() {
      return (
@@ -16,8 +17,12 @@ export default function Home() {
                          Compare
                     </Link>
                </div>
-               <FilterBar />
-               <EventList />
+               <Suspense fallback={<div>Loading filters...</div>}>
+                    <FilterBar />
+               </Suspense>
+               <Suspense fallback={<div>Loading events...</div>}>
+                    <EventList />
+               </Suspense>
           </div>
      );
 }

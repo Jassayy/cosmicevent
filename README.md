@@ -53,6 +53,8 @@ Create a `.env` file in the root directory:
 # Supabase
 NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
+NASA_API_KEY=your-api-key
+NEXT_PUBLIC_BASE_URL=your-domain
 
 
 
